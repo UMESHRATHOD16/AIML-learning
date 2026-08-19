@@ -9,6 +9,13 @@ class Car:
     def fuel_type(self):                  # Polymorphism
         return "Diesel or petrol"
 
+    @staticmethod       # Cannot be accessible by objects of this class 
+    def car_description():
+        return "This Class if of Cars and This is written in Static method" 
+        
+
+
+
 class ElectricCar(Car):
     def __init__(self, brand, model, batterySize):
         super().__init__(brand, model)
@@ -29,3 +36,5 @@ my_tesla = ElectricCar("Tesla","Model S","8KWh")
 
 print(car1.fuel_type())
 print(my_tesla.fuel_type())
+
+print(Car.car_description())
