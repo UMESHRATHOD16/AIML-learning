@@ -12,10 +12,22 @@ def load_data():
 
 
 def list_all_videos(videos):
-    pass
+    print("\n")
+    print("*"*70)
+    for index, video in enumerate(videos, start=1):
+        print(f'{index}. {video['name']}, Duration : {video['time']}')
+    print("\n")
+    print("*"*70)
 
 def add_video(videos):
-    pass
+   name =  input("Enter Video Name:")
+   time = input("Enter Video Time:")
+   videos.append({
+       'name':name,
+       'time':time,
+
+   })
+   save_data_helper(videos)
 
 def update_video(videos):
     pass
